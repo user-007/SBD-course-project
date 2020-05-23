@@ -1,0 +1,34 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "admin";
+$db = "mydb";
+$conn = new mysqli($servername,$username,$password,$db);
+$type = $_POST["type"];
+$year = $_POST["year"];
+$instrument = $_POST["instrument"];
+$genre = $_POST["genre"];
+$composer = $_POST["composer"];
+$title = $_POST["title"];
+$sql1 = $conn->prepare("insert into type(name) values(?)");
+$sql1->bind_param("s",$type);
+$sql1->execute();
+$idType = $conn->insert_id;
+$sql2 = $conn->prepare("insert into instrument(type) values (?)");
+$sql2->bind_param("s",$instrument);
+$sql2->execute();
+$idInstrument =$conn->insert_id;
+$sql3 = $conn->prepare("insert into composer(name) values(?)");
+$sql3->bind_param("s",$composer);
+$sql3->execute();
+$idComposer=$conn->insert_id;
+$sql4 = $conn->prepare("insert into genre(name) values(?)");
+$sql4->bind_param("s",$genre);
+$sql4->execute();
+$idGenre=$conn->insert_id;
+$insertQuery = $conn->prepare("insert into piece(title,year,idComposer,idGenre,idInstrument,idType) values(?,?,?,?,?,?)");
+$insertQuery->bind_param("ssiiii",$title,$year,$idComposer,$idGenre,$idInstrument,$idType);
+$insertQuery->execute();
+header("Location: index.html");
+die();
+?>

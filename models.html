@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Музикален магазин</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="resources/bootstrap.min.css">
+    <script src="resources/jquery-3.5.1.min.js"></script>
+    <script src="resources/bootstrap.min.js"></script>
+    <style>
+        img {
+            width:1347px;
+            height:553px;
+        }
+        .mods{
+          width:1000px !important;
+          height: 700px !important;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Музикален магазин</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="models.html">Модел</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pieces.php">Муз. произведения</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Информация
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="about.html">За програмата</a>
+            <a class="dropdown-item" href="#">Музика</a>
+        
+          </li>
+          </ul>
+
+  </nav>
+   <section>
+     <h2>Използвана база данни - MySQL</h2>
+     <p>
+       Релацията се състои от 5 таблици - връзката е 1 към много.
+       Първоначално базата е проектирана посредством MySQL Workbench, а след 
+       това са нанесени корекции, където е необходимо.
+     </p>
+     Следва схема на модела на базата:
+     <div width="1000px" height = "700px">
+     <img class="mods" src="images/redaktiran.png" alt=""/>
+     <p>Съществува възможност за добавяне на допълнителна таблица, която да съдържа URL
+       на музикални произведения, които могат да се заредят от YouTube.
+     </p>
+    </div>
+   </section>
+</body>
+</html>
